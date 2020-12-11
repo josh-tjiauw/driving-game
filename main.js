@@ -16,9 +16,6 @@ document.addEventListener('keydown', function (event) {
   else if (event.code === 'Space') {
     move();
   }
-  else {
-    return;
-  }
 });
 
 var data = {
