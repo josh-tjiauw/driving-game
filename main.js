@@ -14,7 +14,7 @@ document.addEventListener('keydown', function (event) {
     $car.style.transform = "rotate(0deg)"
   }
   else if (event.code === 'Space') {
-
+    move();
   }
   else {
     return;
@@ -27,3 +27,11 @@ var data = {
     y: 0
   }
 };
+
+function move(){
+  $car.style.top = data.location.y;
+  var moveCar = setInterval(function(){
+    data.location.x++;
+    $car.style.left = data.location.x.toString().concat('px');
+  }, 16)
+}
