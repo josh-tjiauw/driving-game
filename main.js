@@ -29,10 +29,12 @@ var data = {
   started: false
 };
 
+var moveCar;
+
 function move(){
   $car.style.top = data.location.y;
   data.started = true;
-  var moveCar = setInterval(function(){
+  moveCar = setInterval(function(){
     data.location.x++;
     $car.style.left = data.location.x.toString().concat('px');
   }, 16)
