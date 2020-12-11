@@ -13,8 +13,11 @@ document.addEventListener('keydown', function (event) {
   else if (event.code === 'ArrowRight') {
     $car.style.transform = "rotate(0deg)"
   }
-  else if (event.code === 'Space') {
+  else if (event.code === 'Space' && data.started === false) {
     move();
+  }
+  else if (event.code === 'Space' && data.started === true){
+    stop();
   }
 });
 
@@ -22,17 +25,20 @@ var data = {
   location: {
     x: 0,
     y: 0
-  }
+  },
+  started: false
 };
 
 function move(){
   $car.style.top = data.location.y;
+  data.started = true;
   var moveCar = setInterval(function(){
     data.location.x++;
     $car.style.left = data.location.x.toString().concat('px');
   }, 16)
 }
 
-move.prototype.stop = function(){
-  clearInterval(this.moveCar);
+function stop(){
+  clearInterval(moveCar);
+  data.started = false;
 }
