@@ -32,3 +32,7 @@ function move(){
     $car.style.left = data.location.x.toString().concat('px');
   }, 16)
 }
+
+move.prototype.stop = function(){
+  clearInterval(this.moveCar);
+}
