@@ -1,8 +1,9 @@
 body {
+  position: relative;
   background-color: green;
 }
 
 #car {
+  position: absolute;
   width: 15%;
-  transform: rotate(270deg);
 }
