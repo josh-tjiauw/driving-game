@@ -49,7 +49,9 @@ var moveCarDown;
 function move(direction){
   data.started = true;
   if(direction === 'right'){
-    clearInterval(moveCarLeft, moveCarDown, moveCarUp)
+    clearInterval(moveCarLeft);
+    clearInterval(moveCarDown);
+    clearInterval(moveCarUp);
     moveCarRight = setInterval(function () {
       data.location.x++;
       $car.style.top = data.location.y.toString().concat('px');
@@ -58,7 +60,9 @@ function move(direction){
   }
 
   if(direction === 'left'){
-    clearInterval(moveCarDown, moveCarRight, moveCarUp)
+    clearInterval(moveCarRight);
+    clearInterval(moveCarDown);
+    clearInterval(moveCarUp);
     moveCarLeft = setInterval(function () {
       data.location.x--;
       $car.style.top = data.location.y.toString().concat('px');
@@ -67,7 +71,9 @@ function move(direction){
   }
 
   if(direction === 'up'){
-    clearInterval(moveCarLeft, moveCarRight, moveCarDown)
+    clearInterval(moveCarLeft);
+    clearInterval(moveCarRight);
+    clearInterval(moveCarDown);
     moveCarUp = setInterval(function () {
       data.location.y--;
       $car.style.top = data.location.y.toString().concat('px');
@@ -76,7 +82,9 @@ function move(direction){
   }
 
   if(direction === 'down'){
-    clearInterval(moveCarLeft, moveCarRight, moveCarUp)
+    clearInterval(moveCarLeft);
+    clearInterval(moveCarRight);
+    clearInterval(moveCarUp);
     moveCarDown = setInterval(function () {
       data.location.y++;
       $car.style.top = data.location.y.toString().concat('px');
@@ -86,6 +94,9 @@ function move(direction){
 }
 
 function stop(){
-  clearInterval(moveCarRight, moveCarLeft, moveCarUp, moveCarDown);
+  clearInterval(moveCarLeft);
+  clearInterval(moveCarRight);
+  clearInterval(moveCarUp);
+  clearInterval(moveCarDown);
   data.started = false;
 }
