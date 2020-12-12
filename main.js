@@ -57,7 +57,7 @@ function move(direction){
     clearInterval(moveCarDown);
     clearInterval(moveCarUp);
     moveCarRight = setInterval(function () {
-      data.location.x++;
+      data.location.x+=10;
       $car.style.top = data.location.y.toString().concat('px');
       $car.style.left = data.location.x.toString().concat('px');
     }, 16)
@@ -68,7 +68,7 @@ function move(direction){
     clearInterval(moveCarDown);
     clearInterval(moveCarUp);
     moveCarLeft = setInterval(function () {
-      data.location.x--;
+      data.location.x-=10;
       $car.style.top = data.location.y.toString().concat('px');
       $car.style.left = data.location.x.toString().concat('px');
     }, 16)
@@ -79,7 +79,7 @@ function move(direction){
     clearInterval(moveCarRight);
     clearInterval(moveCarDown);
     moveCarUp = setInterval(function () {
-      data.location.y--;
+      data.location.y-=10;
       $car.style.top = data.location.y.toString().concat('px');
       $car.style.left = data.location.x.toString().concat('px');
     }, 16)
@@ -90,7 +90,7 @@ function move(direction){
     clearInterval(moveCarRight);
     clearInterval(moveCarUp);
     moveCarDown = setInterval(function () {
-      data.location.y++;
+      data.location.y+=10;
       $car.style.top = data.location.y.toString().concat('px');
       $car.style.left = data.location.x.toString().concat('px');
     }, 16)
