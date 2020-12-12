@@ -1,25 +1,29 @@
 var $car = document.getElementById('car');
-console.log($car);
+var direction;
 document.addEventListener('keydown', function (event) {
-  if (event.code === 'ArrowUp') {
+  if (event.code === 'ArrowUp' && direction !== 'up') {
+    direction = 'up';
     $car.style.transform = "rotate(270deg)"
     if(data.started === true){
       move('up');
     }
   }
-  else if (event.code === 'ArrowDown') {
+  else if (event.code === 'ArrowDown' && direction !== 'down') {
+    direction = 'down';
     $car.style.transform = "rotate(90deg)"
     if (data.started === true) {
       move('down');
     }
   }
-  else if (event.code === 'ArrowLeft') {
+  else if (event.code === 'ArrowLeft' && direction !== 'left') {
+    direction = 'left';
     $car.style.transform = "rotate(180deg)"
     if (data.started === true) {
       move('left');
     }
   }
-  else if (event.code === 'ArrowRight') {
+  else if (event.code === 'ArrowRight' && direction !== 'right') {
+    direction = 'right';
     $car.style.transform = "rotate(0deg)"
     if (data.started === true) {
       move('right');
